@@ -1,6 +1,6 @@
 # 라포레(la Forêt) 홈페이지 — Claude Code 작업 가이드
 
-제주 도남동 **한국무용 스튜디오** **라포레무브먼트**의 단일 페이지 홍보 사이트(유아·초등·성인·예비전공/콩쿨). 사이트 표기는 '학원'·'전문교육기관'이 아니라 **'한국무용 스튜디오'**. 주 타깃은 30~40대 엄마. 발레 관련 내용은 넣지 않음. 목적은 무료체험 문의 유도, 굿즈 안내, 홍보.
+제주 도남동 **한국무용 스튜디오** **라포레무브먼트**의 단일 페이지 홍보 사이트(유아·초등·성인·예비전공/콩쿨). 사이트 표기는 '학원'·'전문교육기관'이 아니라 **'한국무용 스튜디오'**. 주 타깃은 30~40대 엄마. 발레 관련 내용은 넣지 않음. **바우처 안내도 넣지 않음**(유아 대상 바우처가 따로 없음, 2026-11-04 삭제). 목적은 무료체험 문의 유도, 굿즈 안내, 홍보.
 
 ## 구조·배포
 - 정적 사이트: `index.html`(본문) + `privacy.html`(개인정보처리방침). 빌드 도구 없음.
@@ -9,7 +9,7 @@
   - 캐릭터 함수: `kidHanbok(옵션)`(한복+한삼 리본, 초급반), `kidFan`(부채, 무대에서 회전·개인레슨 카드), `kidStar`(트로피, 예비전공/콩쿨반), `adult`(진도북춤 북, 성인반), `kidPencil`(왕연필 릴레이, 광장 둘레를 달림), `kidWitch`(마녀+호박등). 공통 얼굴 `face()`, 팔 `arm()`.
   - 카드 그림 키(`data-kid`): hanbok·star·adult·fan·pencil·friends.
   - `og-image.jpg`는 이 3D 마을을 렌더링한 장면 + 문구(2026-11-04).
-  - 건물은 `buildWorld()` 안 `place(g, {id, name, sub, desc, color, ly})`: 나무집=about, 연습실=programs, 무대=gallery, 바우처 센터=voucher, 굿즈샵=shop, 카톡 우체통=contact. 누르면 카메라가 다가가고 대화창에 설명 + '자세히 보기' 버튼.
+  - 건물은 `buildWorld()` 안 `place(g, {id, name, sub, desc, color, ly})`: 나무집=about, 연습실=programs, 무대=gallery, 시계탑=timetable(`#programs` 안 시간표), 굿즈샵=shop, 카톡 우체통=contact. 누르면 카메라가 다가가고 대화창에 설명 + '자세히 보기' 버튼.
   - 아래 섹션의 캐릭터 그림(`img.kidimg[data-kid]`)은 페이지가 열릴 때 같은 3D 캐릭터를 렌더링해서 채움(`renderPortraits`).
   - 3D가 9초 안에 안 뜨면 `.fallback`으로 글자만 보이는 화면 전환.
   - 카메라 거리는 `resize()`가 자동 계산(건물·이름표·섬 가장자리 점이 제목과 대화창 사이에 들어오도록). PC는 섬 전체, 휴대폰은 섬 가장자리만 살짝 잘리는 절충(`s = .8`).
@@ -19,7 +19,7 @@
 - 배포: GitHub `ldg0116-oss/laforetsite` `main`에 push → Netlify 자동 배포. 수정 후 `git add . && git commit && git push origin main`.
 - 대표 주소: **https://laforet-jeju.netlify.app** (무료 Netlify 주소, 2026-11-04 사용자가 유지 결정). canonical·og:url·og:image·JSON-LD·robots·sitemap 모두 이 주소. 주소가 바뀌면 전부 일괄 치환.
 - 폰트: Pretendard(전체, jsDelivr CDN).
-- 섹션 순서: hero(3D 마을) → about → programs → voucher → gallery → voice(hidden) → shop → gear(hidden) → contact → footer. 모바일은 하단 플로팅 '카톡 문의' 버튼(첫 화면 지나면 나타남).
+- 섹션 순서: hero(3D 마을) → about → programs(+시간표 `#timetable`) → gallery → voice(hidden) → shop → gear(hidden) → contact → footer. 모바일은 하단 플로팅 '카톡 문의' 버튼(첫 화면 지나면 나타남).
 
 ## 디자인 원칙
 - 컨셉: **"숲속 장난감 마을 라포레"** — 레퍼런스 kodeclubs.com(3D 장난감 세상 가상 투어)의 방식을 따르되 모델·코드는 전부 직접 제작(그 사이트 자산 복제 금지). 물 위 섬, 둥근 블록 건물, 부드러운 그림자, 흰 말풍선 대화창(분홍 이름표 + '다음 ›').
@@ -49,7 +49,8 @@
 - 쿠팡 파트너스: `#gear`의 `hidden` 제거 + 【쿠팡 파트너스 링크】 교체 (공시 문구 유지)
 - 실제 학부모 후기로 교체 후 `#voice`의 `hidden` 제거
 - 네이버 서치어드바이저·구글 서치콘솔 소유확인 `<meta>` 코드
-- SmartPlace·카카오채널 홈페이지 주소를 laforet-jeju.netlify.app으로 등록 + 서치어드바이저·서치콘솔 등록 + sitemap 제출
+- ~~SmartPlace 홈페이지 주소 등록~~ (2026-11-04 완료). 카카오채널 프로필 홈페이지 주소 등록 여부 확인 + 서치어드바이저·서치콘솔 등록 + sitemap 제출
+- 카카오채널 자동응답: 회원·문의가 쌓여 자주 묻는 질문이 모이면 그때 신청(사용자 결정). 그때 실제 질문 기반으로 응답 문구 작성.
 - (나중에) laforetmovement.com 구매 시: Netlify에 커스텀 도메인 연결(A `@`→`75.2.60.5`, CNAME `www`→`laforet-jeju.netlify.app`, 대표 도메인은 apex) → 사이트 주소 일괄 치환 → SmartPlace·카카오채널·서치콘솔 주소 변경
 
 ## 작업 방식
