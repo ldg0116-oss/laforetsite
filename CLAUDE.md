@@ -12,6 +12,9 @@
   - 건물은 `buildWorld()` 안 `place(g, {id, name, sub, desc, color, ly})`: 나무집=about, 연습실=programs, 무대=gallery, 바우처 센터=voucher, 굿즈샵=shop, 카톡 우체통=contact. 누르면 카메라가 다가가고 대화창에 설명 + '자세히 보기' 버튼.
   - 아래 섹션의 캐릭터 그림(`img.kidimg[data-kid]`)은 페이지가 열릴 때 같은 3D 캐릭터를 렌더링해서 채움(`renderPortraits`).
   - 3D가 9초 안에 안 뜨면 `.fallback`으로 글자만 보이는 화면 전환.
+  - 카메라 거리는 `resize()`가 자동 계산(건물·이름표·섬 가장자리 점이 제목과 대화창 사이에 들어오도록). PC는 섬 전체, 휴대폰은 섬 가장자리만 살짝 잘리는 절충(`s = .8`).
+  - 첫 화면 글자는 초록색 'La Forêt Movement' 제목 하나만(사용자 요청, 슬로건·버튼 없음).
+  - 카카오: 우체통 이름표·문의 섹션은 '카카오톡 채널 추가'(채널 홈) 하나로 통일. 휴대폰 플로팅 '카톡 문의'만 채팅 링크.
 - 2D 그림 버전(이전 시안)은 저장소에 없음(로컬 임시 백업만).
 - 배포: GitHub `ldg0116-oss/laforetsite` `main`에 push → Netlify 자동 배포. 수정 후 `git add . && git commit && git push origin main`.
 - 대표 주소: **https://laforet-jeju.netlify.app** (무료 Netlify 주소, 2026-11-04 사용자가 유지 결정). canonical·og:url·og:image·JSON-LD·robots·sitemap 모두 이 주소. 주소가 바뀌면 전부 일괄 치환.
