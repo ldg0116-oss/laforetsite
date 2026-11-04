@@ -9,17 +9,18 @@
   - 캐릭터 함수: `kidHanbok(옵션)`(한복+한삼 리본, 초급반), `kidFan`(부채, 무대에서 회전·개인레슨 카드), `kidStar`(트로피, 예비전공/콩쿨반), `adult`(진도북춤 북, 성인반), `kidPencil`(왕연필 릴레이, 광장 둘레를 달림), `kidWitch`(마녀+호박등). 공통 얼굴 `face()`, 팔 `arm()`.
   - 카드 그림 키(`data-kid`): hanbok·star·adult·fan·pencil·friends.
   - `og-image.jpg`는 이 3D 마을을 렌더링한 장면 + 문구(2026-11-04).
-  - 건물은 `buildWorld()` 안 `place(g, {id, name, sub, desc, color, ly})`: 나무집=about, 연습실=programs, 무대=gallery, 시계탑=timetable(`#programs` 안 시간표), 굿즈샵=shop, 카톡 우체통=contact. 누르면 카메라가 다가가고 대화창에 설명 + '자세히 보기' 버튼.
+  - 건물은 `buildWorld()` 안 `place(g, {id, name, sub, desc, color, ly})`: 건물 5개 오각형 대칭 배치 — 뒤: 연습실=programs(왼), 무대=gallery(가운데), 나무집=about(오른) / 앞: 굿즈샵=shop(왼), 카톡 우체통 '문의하기'=contact(오른). 누르면 카메라가 다가가고 대화창에 설명 + '자세히 보기 ↓'(해당 섹션으로 이동). 메뉴가 겹치는 건물은 만들지 않음(수업 안내=시간표 포함).
   - 아래 섹션의 캐릭터 그림(`img.kidimg[data-kid]`)은 페이지가 열릴 때 같은 3D 캐릭터를 렌더링해서 채움(`renderPortraits`).
   - 3D가 9초 안에 안 뜨면 `.fallback`으로 글자만 보이는 화면 전환.
   - 카메라 거리는 `resize()`가 자동 계산(건물·이름표·섬 가장자리 점이 제목과 대화창 사이에 들어오도록). PC는 섬 전체, 휴대폰은 섬 가장자리만 살짝 잘리는 절충(`s = .8`).
   - 첫 화면 글자는 초록색 'La Forêt Movement' 제목 하나만(사용자 요청, 슬로건·버튼 없음).
-  - 카카오: 우체통 이름표·문의 섹션은 '카카오톡 채널 추가'(채널 홈) 하나로 통일. 휴대폰 플로팅 '카톡 문의'만 채팅 링크.
+  - 카카오: 마을에선 '문의하기' → 아래 `#contact`로 이동, 거기서 노란 '카카오톡 채널 추가'(채널 홈) + 오시는 길(주소·전화·지도). 휴대폰 플로팅 '카톡 문의'만 채팅 링크.
+  - 아래 섹션은 '한눈에' 원칙: 짧은 한 줄 설명 + 칩(시간·키워드). 긴 문단 넣지 않기.
 - 2D 그림 버전(이전 시안)은 저장소에 없음(로컬 임시 백업만).
 - 배포: GitHub `ldg0116-oss/laforetsite` `main`에 push → Netlify 자동 배포. 수정 후 `git add . && git commit && git push origin main`.
 - 대표 주소: **https://laforet-jeju.netlify.app** (무료 Netlify 주소, 2026-11-04 사용자가 유지 결정). canonical·og:url·og:image·JSON-LD·robots·sitemap 모두 이 주소. 주소가 바뀌면 전부 일괄 치환.
 - 폰트: Pretendard(전체, jsDelivr CDN).
-- 섹션 순서: hero(3D 마을) → about → programs(+시간표 `#timetable`) → gallery → voice(hidden) → shop → gear(hidden) → contact → footer. 모바일은 하단 플로팅 '카톡 문의' 버튼(첫 화면 지나면 나타남).
+- 섹션 순서: hero(3D 마을) → about → programs(반별 카드에 시간 칩 포함) → gallery → voice(hidden) → shop → gear(hidden) → contact → footer. 모바일은 하단 플로팅 '카톡 문의' 버튼(첫 화면 지나면 나타남).
 
 ## 디자인 원칙
 - 컨셉: **"숲속 장난감 마을 라포레"** — 레퍼런스 kodeclubs.com(3D 장난감 세상 가상 투어)의 방식을 따르되 모델·코드는 전부 직접 제작(그 사이트 자산 복제 금지). 물 위 섬, 둥근 블록 건물, 부드러운 그림자, 흰 말풍선 대화창(분홍 이름표 + '다음 ›').
@@ -42,7 +43,7 @@
   - 예비전공반(콩쿨반): 월 15:30–17:00 · 토 15:30–17:00 (2027 콩쿨 참가자 모집 중, 유아·초등, 초보자 가능)
   - 성인반: 화 19:00–20:00 · 목 18:30–19:30 (9~11월 진도북춤 작품 과정, 주 1회/2회 선택)
   - 개인 및 소그룹 레슨: 화·수·금·일, 시간 협의
-  - 시간표가 바뀌면 `#programs`의 카드 `.when` 줄과 `.week` 시간표를 함께 수정.
+  - 시간표가 바뀌면 `#programs`의 반별 카드 `.times` 칩만 수정(별도 주간 시간표 없음).
 
 ## 남은 할 일
 - 스마트스토어 URL (굿즈는 현재 '준비중'; 판매 전 통신판매업 신고 확인)

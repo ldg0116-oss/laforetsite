@@ -100,9 +100,9 @@
   .hero3d.fallback .hero-copy{top:50%; transform:translateY(-60%)}
 
   /* ===== sections ===== */
-  .sec{padding:112px 0}
+  .sec{padding:92px 0}
   .eyebrow{display:inline-block; font-size:.8rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--pink)}
-  .sec-head{margin-bottom:48px; max-width:46rem}
+  .sec-head{margin-bottom:34px; max-width:46rem}
   .sec-head.center{margin-left:auto; margin-right:auto; text-align:center}
   .sec-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem); margin:.5rem 0 .7rem}
   .sec-head p{color:var(--muted); font-size:1.05rem}
@@ -114,47 +114,33 @@
   .about-art{background:linear-gradient(180deg,#dff1ff,#f5fbff); border-radius:36px; aspect-ratio:16/10; display:flex; align-items:flex-end; justify-content:center; overflow:hidden; padding-top:12px}
   .about-art img{width:100%; height:auto}
   .about-txt h2{font-size:clamp(1.9rem,3.6vw,2.7rem); margin:.5rem 0 .3rem}
-  .en-sm{color:var(--pink); font-weight:700; font-size:1rem; margin-bottom:1.3rem}
   .about-txt p.body{color:var(--text); font-size:1.04rem; margin-bottom:1rem}
 
+  .facts{list-style:none; display:flex; flex-wrap:wrap; gap:8px; margin-top:18px}
+  .facts li{font-size:.86rem; font-weight:700; color:var(--g); background:var(--mint-l); border-radius:999px; padding:.35em .9em}
+
+  /* 수업 안내 = 반 + 시간을 한 장에 */
   #programs{background:var(--sky-l)}
-  .cards{display:grid; grid-template-columns:repeat(4,1fr); gap:22px}
-  @media (max-width:1100px){ .cards{grid-template-columns:repeat(2,1fr)} }
-  .card .when{font-size:.86rem; font-weight:700; color:var(--g); margin:-.1rem 0 .55rem}
-  .timetable{margin-top:40px; background:#fff; border-radius:var(--r); box-shadow:var(--shadow); padding:30px 30px 26px}
-  .tt-head{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap}
-  .tt-head h3{font-size:1.3rem}
-  .tt-legend{display:flex; gap:6px; flex-wrap:wrap}
-  .tt-legend span{font-size:.78rem; font-weight:700; border-radius:999px; padding:.3em .8em}
-  .week{display:grid; grid-template-columns:repeat(7,1fr); gap:10px; margin-top:18px}
-  .day{background:var(--sky-l); border-radius:18px; padding:12px 8px 14px; display:flex; flex-direction:column; gap:8px; min-height:210px}
-  .day b{display:block; text-align:center; font-weight:800; color:var(--ink); padding-bottom:8px; border-bottom:1px solid #e2ebf2}
-  .day span{display:block; border-radius:12px; padding:9px 6px; text-align:center; font-weight:800; font-size:.86rem; line-height:1.35}
-  .day span small{display:block; font-weight:600; font-size:.74rem; opacity:.85}
-  .day span em{display:block; font-style:normal; font-weight:700; font-size:.82rem; margin-top:3px}
-  .c1{background:#ffe3ec; color:#c2185b}
-  .c2{background:#ece6ff; color:#5b3fc4}
-  .c3{background:#dcefff; color:#1f6fb8}
-  .c4{background:#fff; color:var(--muted)}
-  .day span.c4{font-weight:600}
-  .tt-note{margin-top:14px; font-size:.88rem; color:var(--muted)}
-  @media (max-width:760px){
-    .timetable{padding:24px 18px 20px}
-    .week{grid-template-columns:1fr; gap:8px}
-    .day{flex-direction:row; flex-wrap:wrap; align-items:stretch; min-height:0; padding:10px; gap:6px}
-    .day b{flex:0 0 34px; border:none; padding:0; display:grid; place-items:center}
-    .day span{flex:1 1 130px; text-align:left; padding:8px 10px}
+  .classes{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+  .cls{background:#fff; border-radius:24px; box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column}
+  .cls-art{background:var(--c); height:150px; display:flex; align-items:flex-end; justify-content:center; flex:none}
+  .cls-art img{height:142px}
+  .cls-body{padding:18px 20px 20px}
+  .cls h3{font-size:1.22rem; margin-bottom:.15rem}
+  .cls h3 small{display:inline-block; font-size:.72rem; font-weight:800; color:var(--t); background:var(--c); border-radius:999px; padding:.15em .6em; margin-left:6px; vertical-align:3px; letter-spacing:0}
+  .cls p{color:var(--muted); font-size:.9rem; line-height:1.5; margin-bottom:.75rem}
+  .times{list-style:none; display:flex; flex-wrap:wrap; gap:6px}
+  .times li{font-size:.82rem; font-weight:800; color:var(--t); background:var(--c); border-radius:10px; padding:.32em .65em; white-space:nowrap}
+  .cls-note{margin-top:18px; font-size:.88rem; color:var(--muted)}
+  @media (max-width:1100px){ .classes{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:640px){
+    .classes{grid-template-columns:1fr; gap:12px}
+    .cls{flex-direction:row; align-items:stretch}
+    .cls-art{width:92px; height:auto}
+    .cls-art img{height:auto; width:100%; max-width:84px; margin:0 auto}
+    .cls-body{padding:14px 16px 16px}
+    .cls h3{font-size:1.1rem}
   }
-  .card{background:#fff; border-radius:var(--r); box-shadow:var(--shadow); overflow:hidden; display:flex; flex-direction:column; transition:transform .25s, box-shadow .25s}
-  .card:hover{transform:translateY(-6px); box-shadow:0 22px 50px rgba(24,58,44,.13)}
-  .card .art{height:220px; display:flex; align-items:flex-end; justify-content:center; background:var(--c)}
-  .card .art img{height:208px}
-  .card .body{padding:24px 26px 28px; display:flex; flex-direction:column; flex:1}
-  .tag{align-self:flex-start; font-size:.78rem; font-weight:800; letter-spacing:.04em; color:var(--pink); background:var(--pink-l); border-radius:999px; padding:.25em .8em}
-  .card h3{font-size:1.45rem; margin:.6rem 0 .4rem}
-  .card p{color:var(--muted); font-size:.97rem; margin-bottom:1.2rem; flex:1}
-  .card a.more{font-weight:800; color:var(--g); font-size:.95rem}
-  .card a.more:hover{color:var(--pink)}
 
 
   #gallery{background:#fff}
@@ -185,12 +171,9 @@
   .trial-box{position:relative; background:#fff; border-radius:var(--r); box-shadow:var(--shadow); padding:36px 36px 34px; overflow:hidden}
   .trial-box h3{font-size:1.45rem; margin-bottom:1rem; padding-right:130px}
   .trial-box .kidimg{position:absolute; right:12px; top:4px; height:170px}
-  .trial-steps{list-style:none; margin-bottom:24px}
-  .trial-steps li{display:flex; gap:14px; align-items:flex-start; padding:12px 0; border-bottom:1px solid #eef2ef; color:var(--text)}
-  .trial-steps li:last-child{border-bottom:none}
-  .trial-steps b{flex:none; width:30px; height:30px; border-radius:10px; display:grid; place-items:center; font-weight:900; font-size:.9rem; color:#fff; background:var(--pink); line-height:1}
-  .trial-steps li:nth-child(2) b{background:#5aa9f0}
-  .trial-steps li:nth-child(3) b{background:var(--gold)}
+  .flow{list-style:none; display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:4px 0 22px; padding-right:110px}
+  .flow li{font-size:.9rem; font-weight:700; color:var(--ink); background:var(--sky-l); border-radius:12px; padding:.45em .8em}
+  .flow li.arrow{background:none; padding:0; color:var(--pink); font-weight:800}
   .info-card{background:#fff; border-radius:var(--r); box-shadow:var(--shadow); padding:34px 32px}
   .info-item{display:flex; gap:16px; margin-bottom:18px; align-items:flex-start}
   .info-item .k{flex:none; min-width:64px; font-size:.82rem; font-weight:800; color:var(--pink); padding-top:.2em}
@@ -219,12 +202,15 @@
     .lbl{font-size:.8rem; padding:.38em .75em}
     .dlg{bottom:14px; padding:20px 18px 12px; border-radius:20px}
     .dlg p{font-size:.97rem}
-    .about-grid,.contact-grid{grid-template-columns:1fr; gap:34px}
-    .cards,.steps,.shop-grid,.quotes,#gear ul{grid-template-columns:1fr}
-    .sec{padding:84px 0}
-    .trial-box{padding:28px 24px}
-    .trial-box .kidimg{height:110px; right:6px; top:6px}
-    .trial-box h3{font-size:1.3rem; padding-right:90px}
+    .about-grid,.contact-grid{grid-template-columns:1fr; gap:24px}
+    .shop-grid,.quotes,#gear ul{grid-template-columns:1fr}
+    .sec{padding:64px 0}
+    .sec-head{margin-bottom:24px}
+    .sec-head h2{font-size:1.7rem}
+    .trial-box{padding:24px 20px}
+    .trial-box .kidimg{height:100px; right:6px; top:6px}
+    .trial-box h3{font-size:1.2rem; padding-right:84px}
+    .flow{padding-right:0}
     .info-card{padding:28px 24px}
     .prod{padding:18px}
     .prod .thumb{width:86px; height:86px}
@@ -291,10 +277,8 @@
     <div class="about-txt">
       <p class="eyebrow">About</p>
       <h2>아이마다 피어나는<br>계절이 다릅니다.</h2>
-      <p class="en-sm">We wait, and we do not rush.</p>
-      <p class="body">라포레(la Forêt)는 ‘숲’이라는 뜻입니다. 아이가 숲의 나무처럼 자기 속도로 건강하게 자라도록, 전통무용으로 바른 자세와 표현력, 그리고 마음을 함께 키웁니다.</p>
-      <p class="body">화려한 결과보다 아이가 춤을 ‘좋아하게 되는 것’을 먼저 생각합니다. 한삼을 처음 흔들던 날의 웃음, 무대에 처음 선 날의 떨림 — 그 모든 순간이 아이를 자라게 합니다.</p>
-      <p class="body">유아·초등 초급반부터 예비전공반(콩쿨반), 성인반, 개인·소그룹 레슨까지. 처음 배우는 분도 기본 자세와 호흡부터 차근차근 시작합니다.</p>
+      <p class="body">라포레(la Forêt)는 ‘숲’이라는 뜻이에요. 자기 속도로 자라도록, 우리 춤으로 바른 자세와 표현력을 함께 키워요.</p>
+      <ul class="facts"><li>유아·초등</li><li>성인 취미</li><li>예비전공·콩쿨</li><li>소수 정예</li></ul>
     </div>
   </div>
 </section>
@@ -303,68 +287,45 @@
 <section id="programs" class="sec">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow">Programs</p>
-      <h2>유아부터 성인까지, 목표에 맞춘 반</h2>
-      <p>모든 반은 소수 정예로 운영하며, 무료 체험 후 등록할 수 있습니다.</p>
+      <p class="eyebrow">Classes</p>
+      <h2>수업 안내</h2>
+      <p>모든 반 소수 정예 · 무료 체험 후 등록</p>
     </div>
-    <div class="cards reveal">
-      <div class="card">
-        <div class="art" style="--c:linear-gradient(180deg,#ffe3ec,#fff4f7)"><img class="kidimg" data-kid="hanbok" alt="" width="360" height="420"></div>
-        <div class="body">
-          <span class="tag">유아·초등</span>
-          <h3>초급반</h3>
-          <p class="when">월 17:10 · 목 16:30 · 토 14:30</p>
-          <p>한삼·부채·장단으로 우리 춤의 곡선과 흥을 놀이처럼 배워요. 바른 자세와 기본기를 차근차근 다집니다.</p>
-          <a href="#contact" class="more">수업 문의하기 →</a>
+    <div class="classes reveal">
+      <div class="cls" style="--c:#ffe6ee; --t:#c2185b">
+        <div class="cls-art"><img class="kidimg" data-kid="hanbok" alt="" width="360" height="420"></div>
+        <div class="cls-body">
+          <h3>초급반<small>유아·초등</small></h3>
+          <p>한삼·부채·장단으로 기본기를 놀이처럼</p>
+          <ul class="times"><li>월 17:10–18:00</li><li>목 16:30–17:20</li><li>토 14:30–15:20</li></ul>
         </div>
       </div>
-      <div class="card">
-        <div class="art" style="--c:linear-gradient(180deg,#ece6ff,#f7f4ff)"><img class="kidimg" data-kid="star" alt="" width="360" height="420"></div>
-        <div class="body">
-          <span class="tag">콩쿨반</span>
-          <h3>예비전공반</h3>
-          <p class="when">월·토 15:30–17:00</p>
-          <p>예비전공과 콩쿨을 준비하는 반. 하나의 작품을 완성하며 자신감·집중력·표현력을 키워요. 2027 콩쿨 참가자 모집 중(유아·초등, 초보자 가능).</p>
-          <a href="#contact" class="more">상담 신청하기 →</a>
+      <div class="cls" style="--c:#efe9ff; --t:#5b3fc4">
+        <div class="cls-art"><img class="kidimg" data-kid="star" alt="" width="360" height="420"></div>
+        <div class="cls-body">
+          <h3>예비전공반<small>콩쿨반</small></h3>
+          <p>작품을 완성하며 콩쿨·입시 준비</p>
+          <ul class="times"><li>월 15:30–17:00</li><li>토 15:30–17:00</li></ul>
         </div>
       </div>
-      <div class="card">
-        <div class="art" style="--c:linear-gradient(180deg,#fff1c9,#fffaeb)"><img class="kidimg" data-kid="adult" alt="" width="360" height="420"></div>
-        <div class="body">
-          <span class="tag">성인</span>
-          <h3>성인반</h3>
-          <p class="when">화 19:00 · 목 18:30</p>
-          <p>한국무용이 처음이어도 괜찮아요. 기본 자세·호흡·발디딤부터 익혀 진도북춤 같은 작품으로 이어갑니다. 주 1회·2회 선택.</p>
-          <a href="#contact" class="more">수업 문의하기 →</a>
+      <div class="cls" style="--c:#fff2cf; --t:#9a6400">
+        <div class="cls-art"><img class="kidimg" data-kid="adult" alt="" width="360" height="420"></div>
+        <div class="cls-body">
+          <h3>성인반<small>취미</small></h3>
+          <p>처음이어도 OK, 기본부터 진도북춤까지</p>
+          <ul class="times"><li>화 19:00–20:00</li><li>목 18:30–19:30</li></ul>
         </div>
       </div>
-      <div class="card">
-        <div class="art" style="--c:linear-gradient(180deg,#dff0ff,#f3f9ff)"><img class="kidimg" data-kid="fan" alt="" width="360" height="420"></div>
-        <div class="body">
-          <span class="tag">1:1 · 소그룹</span>
-          <h3>개인 및 소그룹 레슨</h3>
-          <p class="when">화·수·금·일 · 시간 협의</p>
-          <p>원하는 시간에 1:1 또는 소그룹으로 맞춤 수업을 해요. 콩쿨 작품 준비, 기본기 보완 등 목표에 맞춰 진행합니다.</p>
-          <a href="#contact" class="more">상담 신청하기 →</a>
+      <div class="cls" style="--c:#e1f1ff; --t:#1f6fb8">
+        <div class="cls-art"><img class="kidimg" data-kid="fan" alt="" width="360" height="420"></div>
+        <div class="cls-body">
+          <h3>개인·소그룹<small>레슨</small></h3>
+          <p>목표에 맞춘 1:1·소그룹 맞춤 수업</p>
+          <ul class="times"><li>화·수·금·일</li><li>시간 협의</li></ul>
         </div>
       </div>
     </div>
-    <div class="timetable reveal" id="timetable">
-      <div class="tt-head">
-        <h3>수업 시간표</h3>
-        <div class="tt-legend"><span class="c1">초급반(유아·초등)</span><span class="c2">예비전공반(콩쿨반)</span><span class="c3">성인반</span><span class="c4">개인·소그룹 레슨</span></div>
-      </div>
-      <div class="week">
-        <div class="day"><b>월</b><span class="c2">예비전공반<small>콩쿨반</small><em>15:30–17:00</em></span><span class="c1">초급반<small>유아·초등</small><em>17:10–18:00</em></span></div>
-        <div class="day"><b>화</b><span class="c4">개인·소그룹 레슨</span><span class="c3">성인반<em>19:00–20:00</em></span></div>
-        <div class="day"><b>수</b><span class="c4">개인·소그룹 레슨</span></div>
-        <div class="day"><b>목</b><span class="c1">초급반<small>유아·초등</small><em>16:30–17:20</em></span><span class="c3">성인반<em>18:30–19:30</em></span></div>
-        <div class="day"><b>금</b><span class="c4">개인·소그룹 레슨</span></div>
-        <div class="day"><b>토</b><span class="c1">초급반<small>유아·초등</small><em>14:30–15:20</em></span><span class="c2">예비전공반<small>콩쿨반</small><em>15:30–17:00</em></span></div>
-        <div class="day"><b>일</b><span class="c4">개인·소그룹 레슨</span></div>
-      </div>
-      <p class="tt-note">※ 개인 및 소그룹 레슨은 시간을 협의해 진행해요. 시간표는 학기마다 바뀔 수 있으니 카톡으로 편하게 물어봐 주세요.</p>
-    </div>
+    <p class="cls-note">※ 2027 콩쿨 참가자 모집 중(유아·초등, 초보자 가능) · 시간표는 학기마다 바뀔 수 있어요.</p>
   </div>
 </section>
 
@@ -375,7 +336,7 @@
     <div class="sec-head reveal">
       <p class="eyebrow">Gallery</p>
       <h2>라포레의 순간들</h2>
-      <p>연습실의 웃음과 무대 위 우아함. 인스타그램 @laforet_movement 의 최신 소식을 그대로 전해드려요.</p>
+      <p>인스타그램 @laforet_movement 최신 소식</p>
     </div>
     <div class="reveal">
       <behold-widget feed-id="by4LOxMtqBqnBc8oSZgR"></behold-widget>
@@ -403,8 +364,8 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <p class="eyebrow">Goods</p>
-      <h2>아이와 함께 드는 라포레</h2>
-      <p>라포레 굿즈를 준비하고 있어요. 곧 네이버 스마트스토어에서 만나요.</p>
+      <h2>라포레 굿즈</h2>
+      <p>곧 네이버 스마트스토어에서 만나요</p>
     </div>
     <div class="shop-grid reveal">
       <div class="prod">
@@ -441,18 +402,18 @@
 <section id="contact" class="sec">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow">Free Trial</p>
-      <h2>무료 체험을 신청하세요</h2>
-      <p>딱 한 번, 먼저 경험해 보세요. 아이도 어른도 처음이라면 무료 체험부터 시작해요. 카카오톡으로 남겨 주시면 하루 안에 연락드립니다.</p>
+      <p class="eyebrow">Contact</p>
+      <h2>무료 체험 · 문의</h2>
+      <p>아이도 어른도, 처음이라면 무료 체험부터</p>
     </div>
     <div class="contact-grid reveal">
       <div class="trial-box">
         <img class="kidimg" data-kid="pencil" alt="" width="300" height="360">
-        <h3>카카오톡 채널로 간편하게 신청하세요</h3>
-        <ol class="trial-steps">
-          <li><b>1</b><span>아래 버튼을 눌러 라포레 카카오톡 채널을 추가해 주세요.</span></li>
-          <li><b>2</b><span>채팅으로 아이 나이(성인반은 ‘성인’)와 희망 요일·시간을 보내 주세요.</span></li>
-          <li><b>3</b><span>하루 안에 체험 일정을 안내해 드려요.</span></li>
+        <h3>카카오톡 채널로 신청하세요</h3>
+        <ol class="flow">
+          <li>채널 추가</li><li class="arrow" aria-hidden="true">→</li>
+          <li>나이·희망 시간 보내기</li><li class="arrow" aria-hidden="true">→</li>
+          <li>하루 안에 안내</li>
         </ol>
         <div class="contact-btns">
           <a href="https://pf.kakao.com/_xcpPWX" class="btn btn-kakao" target="_blank" rel="noopener">카카오톡 채널 추가</a>
@@ -481,7 +442,7 @@
         <div class="f-social"><a href="https://www.instagram.com/laforet_movement" target="_blank" rel="noopener">Instagram</a> &nbsp;·&nbsp; <a href="https://pf.kakao.com/_xcpPWX" target="_blank" rel="noopener">카카오톡 채널</a></div>
       </div>
       <div class="f-links">
-        <a href="#about">소개</a><br><a href="#programs">수업 안내</a><br><a href="#timetable">시간표</a><br><a href="#contact">오시는 길</a>
+        <a href="#about">소개</a><br><a href="#programs">수업 안내</a><br><a href="#gallery">갤러리</a><br><a href="#contact">오시는 길</a>
       </div>
     </div>
     <div class="f-legal">
@@ -738,7 +699,7 @@ function buildWorld(scene) {
   for (let i = 0; i < 28; i++) { const a = i / 28 * Math.PI * 2; add(scene, cyl(.07, .07, .03, 8), C.yellow, [Math.cos(a) * 5.65, G + .04, .5 + Math.sin(a) * 5.65], { cast: false }); }
   // 건물로 가는 길
   function road(x1, z1, x2, z2, w = 1.3) { const dx = x2 - x1, dz = z2 - z1, L = Math.hypot(dx, dz); add(scene, rbox(w, .04, L, .02), C.path, [(x1 + x2) / 2, G + .02, (z1 + z2) / 2], { r: [0, Math.atan2(dx, dz), 0], cast: false }); }
-  road(0, -5.6, 0, -6.9); road(-4.2, -3.2, -6.2, -4.6); road(4.2, -3.2, 6.2, -4.6); road(-5.4, .9, -8.0, 1.4); road(-3.6, 5.2, -5.2, 6.3); road(3.8, 5.0, 5.6, 6.2);
+  road(0, -5.6, 0, -6.9); road(-4.2, -3.2, -6.2, -4.6); road(4.2, -3.2, 6.6, -4.5); road(-3.6, 5.2, -5.2, 6.3); road(3.8, 5.0, 5.6, 6.2);
 
   // 나무
   function tree(x, z, s = 1, type = 0) {
@@ -750,7 +711,7 @@ function buildWorld(scene) {
   }
   [[-11.6, -3.6, 1.1, 0], [-12.2, 4.4, .9, 2], [-10.8, 8.6, 1, 1], [-3.4, -11.6, 1.1, 2], [3.6, -12.3, .9, 0], [11.8, -2.6, 1, 1], [12.2, 4.6, 1.1, 0], [10.4, 9.2, .9, 2],
    [-1.2, 12.4, .9, 1], [2.6, 11.8, .8, 3], [-7.8, -10.2, 1, 0], [7.6, -10.6, 1, 2], [-12.8, .4, .8, 1], [12.9, .6, .8, 2], [-4.4, -8.6, .8, 3], [4.4, -8.9, .8, 1],
-   [-9.6, -6.4, .75, 3], [9.8, -6.2, .75, 0], [-2.4, 8.6, .7, 1], [2.8, 8.4, .7, 0], [9.2, 4.0, .8, 3], [-8.8, 5.0, .8, 0], [0.4, -11.2, .8, 3]].forEach(a => tree(...a));
+   [-9.6, -6.4, .75, 3], [-9.6, 1.0, 1.05, 0], [9.7, 1.2, 1.05, 1], [-10.4, 3.4, .8, 3], [-2.4, 8.6, .7, 1], [2.8, 8.4, .7, 0], [9.2, 4.0, .8, 3], [-8.8, 5.0, .8, 0], [0.4, -11.2, .8, 3]].forEach(a => tree(...a));
 
   // 꽃
   function flowers(x, z) { [[0, 0, C.pink], [.22, .12, C.yellow], [-.18, .16, C.white], [.05, -.22, C.pinkL]].forEach(([a, b, c]) => add(scene, sph(.11, 10, 8), c, [x + a, G + .11, z + b], { cast: false })); }
@@ -766,7 +727,7 @@ function buildWorld(scene) {
   function place(g, info) { g.userData.place = info; places.push(g); scene.add(g); return g; }
 
   // 1) 큰 나무집 — 소개
-  { const g = new THREE.Group(); g.position.set(-9.6, G, 1.3); g.rotation.y = 1.0;
+  { const g = new THREE.Group(); g.position.set(7.6, G, -5.4); g.rotation.y = -.65;
     add(g, cyl(.5, .72, 2.6, 10), C.brown, [0, 1.3, 0], { flat: true });
     add(g, ico(2.0, 1), C.mint, [0, 3.7, 0], { flat: true }); add(g, ico(1.35, 1), C.mintL, [-1.3, 3.1, .4], { flat: true });
     add(g, ico(1.45, 1), 0x6cc799, [1.3, 3.2, -.3], { flat: true }); add(g, ico(1.1, 1), C.mintL, [.3, 4.9, .2], { flat: true });
@@ -791,7 +752,7 @@ function buildWorld(scene) {
     add(g, rbox(.95, 1.55, .16, .07), C.yellow, [1.25, .9, 1.6]);
     add(g, sph(.07, 10, 8), C.dark, [1.55, .9, 1.7]);
     place(g, { id: 'programs', name: '연습실', sub: '수업 안내', color: '#ff8fb1', ly: 5.0,
-      desc: '유아·초등 초급반, 예비전공반(콩쿨반), 성인반, 개인·소그룹 레슨을 소수 정예로 운영해요.' }); }
+      desc: '초급반·예비전공반·성인반·개인 레슨과 요일별 시간을 한 번에 볼 수 있어요.' }); }
 
   // 3) 무대 — 갤러리
   { const g = new THREE.Group(); g.position.set(0, G, -8.7);
@@ -805,25 +766,6 @@ function buildWorld(scene) {
     place(g, { id: 'gallery', name: '꿈의 무대', sub: '갤러리', color: '#ff6f61', ly: 7.9,
       desc: '인스타그램 @laforet_movement의 최신 소식과 무대 사진을 모아 보여드려요.' }); }
 
-  // 4) 시계탑 — 수업 시간표
-  { const g = new THREE.Group(); g.position.set(7.4, G, -5.7); g.rotation.y = -.42;
-    add(g, rbox(4.2, 2.5, 3.2, .2), C.sky, [0, 1.25, 0]);
-    add(g, rbox(4.6, .4, 3.6, .15), C.blue, [0, 2.65, 0]);
-    add(g, rbox(4.5, .26, 3.5, .1), C.white, [0, .13, 0]);
-    add(g, rbox(1.5, 1.5, 1.5, .15), C.sky, [0, 3.6, -.1]);
-    const tr = cone(1.2, 1.0, 4); tr.rotateY(Math.PI / 4); add(g, tr, C.blue, [0, 4.85, -.1], { flat: true });
-    add(g, cyl(.56, .56, .1, 32), C.white, [0, 3.62, .66], { r: [Math.PI / 2, 0, 0] });
-    add(g, new THREE.TorusGeometry(.56, .05, 8, 32), 0xffc93c, [0, 3.62, .72], { cast: false });
-    const hands = new THREE.Group(); hands.position.set(0, 3.62, .74); g.add(hands);
-    const hh = add(hands, rbox(.07, .3, .03, .012), C.dark, [0, .12, 0], { cast: false });
-    const mh = new THREE.Group(); hands.add(mh); add(mh, rbox(.05, .42, .03, .012), C.pink, [0, .18, .01], { cast: false });
-    anims.push(t => { mh.rotation.z = -t * .8; hh.rotation.z = 0; });
-    add(g, rbox(1.3, .9, .12, .05), C.white, [-.95, 1.55, 1.64]);
-    [0xff7aa0, 0xffd54a, 0x7ed3a0].forEach((c, i) => add(g, rbox(.9, .12, .05, .02), c, [-.95, 1.78 - i * .22, 1.72], { cast: false }));
-    add(g, rbox(.9, 1.25, .16, .07), C.yellow, [.95, .78, 1.6]);
-    add(g, sph(.07, 10, 8), C.dark, [1.22, .78, 1.7]);
-    place(g, { id: 'timetable', name: '시계탑', sub: '수업 시간표', color: '#4a90e2', ly: 5.6,
-      desc: '요일별 수업 시간을 한눈에 볼 수 있어요. 초급반·예비전공반·성인반·개인 레슨 시간을 확인해 보세요.' }); }
 
   // 5) 굿즈샵
   { const g = new THREE.Group(); g.position.set(-6.3, G, 7.2); g.rotation.y = .55;
@@ -846,8 +788,8 @@ function buildWorld(scene) {
     const env = new THREE.Group(); env.position.set(1.25, 3.55, .2); g.add(env);
     add(env, rbox(.8, .55, .08, .03), C.white, [0, 0, 0], { r: [0, 0, -.3] }); add(env, sph(.08, 10, 8), 0xff6f91, [0, -.05, .07]);
     anims.push(t => { env.position.y = 3.55 + Math.sin(t * 2) * .14; env.rotation.z = Math.sin(t * 1.5) * .15; });
-    place(g, { id: 'contact', name: '카톡 우체통', sub: '카카오톡 채널', color: '#f5c400', ly: 4.3, kakao: true,
-      desc: '라포레 카카오톡 채널을 추가하고 수업·체험을 편하게 문의해 주세요.' }); }
+    place(g, { id: 'contact', name: '카톡 우체통', sub: '문의하기', color: '#f5c400', ly: 4.3,
+      desc: '무료 체험·수업 문의는 아래에서! 카카오톡 채널 추가와 오시는 길을 함께 볼 수 있어요.' }); }
 
   // 친구들
   function kid(fig, pos, ry, info, mode) {
@@ -895,7 +837,10 @@ function renderPortraits() {
     const grp = new THREE.Group();
     sh.make().forEach(([fig, x, z, ry]) => { fig.position.set(x, 0, z); fig.rotation.y = ry; fig.userData.anim && fig.userData.anim(2.15); grp.add(fig); });
     s2.add(grp); grp.updateMatrixWorld(true);
-    box.setFromObject(grp); box.getSize(size); box.getCenter(ctr);
+    // 한삼 리본은 빼고 몸 기준으로 맞춤 (리본 때문에 캐릭터가 작아지지 않게)
+    box.makeEmpty(); grp.traverse(o => { if (o.isMesh && o.material !== hansamMatA && o.material !== hansamMatB) box.expandByObject(o); });
+    box.expandByVector(new THREE.Vector3(.18, .05, 0));
+    box.getSize(size); box.getCenter(ctr);
     r2.setSize(sh.w, sh.h, false); cam.aspect = sh.w / sh.h; cam.updateProjectionMatrix();
     const vf = THREE.MathUtils.degToRad(cam.fov / 2), hf = Math.atan(Math.tan(vf) * cam.aspect);
     const dist = Math.max((size.y / 2 * 1.08) / Math.tan(vf), (size.x / 2 * 1.08) / Math.tan(hf)) + size.z / 2;
@@ -1004,8 +949,8 @@ function start() {
   const intro = [
     '안녕하세요! 숲속 장난감 마을 <b>라포레</b>에 오신 걸 환영해요.',
     isTouch ? '마을을 <b>옆으로 밀면</b> 빙글 둘러볼 수 있어요.' : '마을을 <b>드래그하면</b> 빙글 둘러볼 수 있어요.',
-    '건물을 누르면 <b>수업·시간표·갤러리</b>를 구경할 수 있어요. 친구들도 눌러 보세요!',
-    '마음에 드셨다면 <b>카카오톡 채널</b>을 추가하고 편하게 문의해 주세요!'
+    '건물을 누르면 <b>수업·갤러리·굿즈</b>를 구경할 수 있어요. 친구들도 눌러 보세요!',
+    '마음에 드셨다면 <b>문의하기</b>에서 카카오톡 채널 추가와 오시는 길을 확인해 주세요!'
   ];
   let step = 0;
   function say(who, html, actions = [], nextLabel = '다음 ›') {
@@ -1015,7 +960,7 @@ function start() {
   }
   function showIntro(n) {
     step = n; const last = n === intro.length - 1;
-    say('한삼이', intro[n], last ? [{ label: '카카오톡 채널 추가', href: 'https://pf.kakao.com/_xcpPWX', cls: 'btn-kakao', blank: true }] : [], last ? '처음으로 ↺' : '다음 ›');
+    say('한삼이', intro[n], last ? [{ label: '문의하기 ↓', href: '#contact' }] : [], last ? '처음으로 ↺' : '다음 ›');
   }
   dNext.addEventListener('click', () => { if (focused) { unselect(); showIntro(step); } else showIntro((step + 1) % intro.length); });
   showIntro(0);
@@ -1024,9 +969,7 @@ function start() {
     focused = p; const info = p.userData.place;
     targetT.copy(p.position).add(new THREE.Vector3(0, 1.4, 0));
     RT = clamp(baseR * .5, 14, 36); thetaT = clamp(p.rotation.y, -1.1, 1.1);
-    const acts = info.kakao
-      ? [{ label: '카카오톡 채널 추가', href: 'https://pf.kakao.com/_xcpPWX', cls: 'btn-kakao', blank: true }]
-      : [{ label: '자세히 보기 ↓', href: '#' + info.id }];
+    const acts = [{ label: '자세히 보기 ↓', href: '#' + info.id }];
     say(info.name, `<b>${info.sub}</b> · ${info.desc}`, acts, '마을로 돌아가기 ✕');
   }
   function unselect() { focused = null; targetT.copy(homeTarget); RT = baseR; }
