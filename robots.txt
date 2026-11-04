@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://laforetmovement.netlify.app/sitemap.xml
+Sitemap: https://laforet-jeju.netlify.app/sitemap.xml
