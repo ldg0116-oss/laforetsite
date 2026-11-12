@@ -27,9 +27,9 @@ git push origin main        # → Netlify가 자동 배포
 ```
 
 ## 연동된 외부 서비스
-- **인스타 갤러리**: Behold 위젯(feed-id `by4LOxMtqBqnBc8oSZgR`) — 인스타 @laforet_movement 에 올리면 홈페이지 갤러리 자동 갱신
+- **인스타 갤러리**: Behold 위젯(feed-id `by4LOxMtqBqnBc8oSZgR`) — 인스타 @laforet_movement_jeju 에 올리면 홈페이지 갤러리 자동 갱신
 - **카톡 문의**: https://pf.kakao.com/_xcpPWX
-- **인스타**: https://www.instagram.com/laforet_movement
+- **인스타**: https://www.instagram.com/laforet_movement_jeju
 
 ## 운영 방식
 - 무료체험 신청·문의는 **카카오톡 채널로 일원화** (홈페이지 신청 폼 없음, 네이버 예약 미사용)
